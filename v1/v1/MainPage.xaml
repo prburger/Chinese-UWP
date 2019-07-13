@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:v1"
+             Title="PB Flash Cards"                          
+             x:Class="v1.MainPage">
+
+    <StackLayout         
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="Start">
+
+        <Frame Padding="10,15,1,15">
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="Character" 
+                       HorizontalOptions="CenterAndExpand"
+                       Text="Character" 
+                       FontFamily="Calibri"
+                       FontSize="Large"/>
+                <Switch x:Name="CharacterSwitch" 
+                        IsToggled="False"                         
+                        PropertyChanged="CharacterSwitch_PropertyChanged"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Padding="10,15,1,15">
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="FillAndExpand">
+                <Label x:Name="Meaning"
+                       Text="Meaning" 
+                       FontFamily="Calibri"
+                       FontSize="Large"
+                       HorizontalOptions="StartAndExpand" />
+                <Switch x:Name="MeaningSwitch" 
+                        IsToggled="False" 
+                        PropertyChanged="MeaningSwitch_PropertyChanged"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Padding="10,15,1,15">
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="FillAndExpand">
+                <Label x:Name="Pinyin" 
+                       Text="Pinyin"
+                       FontFamily="Calibri"
+                       FontSize="Large"
+                       HorizontalOptions="StartAndExpand"/>
+                <Switch x:Name="PinyinSwitch" 
+                        IsToggled="False" 
+                        PropertyChanged="PinyinSwitch_PropertyChanged"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Padding="0,15,1,15">
+            <StackLayout 
+            Orientation="Horizontal"
+            HorizontalOptions="CenterAndExpand">
+                <Button x:Name="PreviousWord"                            
+                        FontFamily="Calibri"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Padding="5"
+                        Clicked="PreviousWord_Clicked"                         
+                        HorizontalOptions="Center"/>
+                <Button x:Name="NextWord"
+                        FontFamily="Calibri"
+                        FontSize="Large"
+                        FontAttributes="Bold"                        
+                        Padding="5"
+                        Clicked="NextWord_Clicked" 
+                        HorizontalOptions="Center" />
+                <Button x:Name="RandomWord"
+                        FontFamily="Calibri"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Text="Rnd"
+                        Padding="5"
+                        Clicked="RandomWord_Clicked" 
+                        HorizontalOptions="Center" />
+                <Button x:Name="ClearFilters"
+                        FontFamily="Calibri"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Text="Clr"
+                        Padding="5"
+                        Clicked="ClearFilters_Clicked"
+                        HorizontalOptions="Center" />
+            </StackLayout>
+        </Frame>
+
+        <Frame Padding="10,15,1,15">
+            <Picker 
+                FontFamily="Calibri"
+                FontSize="Default"
+                SelectedIndexChanged="WordTypePicker_SelectedIndexChanged"
+                x:Name="WordTypePicker" 
+                    Title="Select A Word Group"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Adjective</x:String>
+                        <x:String>Adverb</x:String>
+                        <x:String>Article</x:String>
+                        <x:String>Conjunction</x:String>
+                        <x:String>Noun</x:String>
+                        <x:String>Particle</x:String>
+                        <x:String>Phrase</x:String>
+                        <x:String>Preposition</x:String>
+                        <x:String>Pronoun</x:String>
+                        <x:String>Verb</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Frame>
+
+        <Frame Padding="10,15,1,15">
+            <Editor 
+                FontFamily="Calibri"
+                FontSize="Default"
+                Text="Search for a word"                
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                x:Name="Search"
+                PropertyChanged="Search_PropertyChanged"/>
+        </Frame>
+
+        <Frame Padding="10,45,1,15">
+            <Label 
+                FontFamily="Calibri"
+                FontSize="Micro" 
+                FontAttributes="Bold"
+                Text="(C) 2019 PBurger" 
+                HorizontalOptions="CenterAndExpand"/>
+        </Frame>
+
+    </StackLayout>
+
+</ContentPage>
